@@ -5,7 +5,7 @@ use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TypesController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\EducationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,11 +59,12 @@ Route::get('/console/types/edit/{type:id}', [TypesController::class, 'editForm']
 Route::post('/console/types/edit/{type:id}', [TypesController::class, 'edit'])->where('type', '[0-9]+')->middleware('auth');
 Route::get('/console/types/delete/{type:id}', [TypesController::class, 'delete'])->where('type', '[0-9]+')->middleware('auth');
 
-Route::get('/console/contacts/list', [ContactsController::class, 'list'])->middleware('auth');
-Route::get('/console/contacts/add', [ContactsController::class, 'addForm'])->middleware('auth');
-Route::post('/console/contacts/add', [ContactsController::class, 'add'])->middleware('auth');
-Route::get('/console/contacts/edit/{contact:id}', [ContactsController::class, 'editForm'])->where('contact', '[0-9]+')->middleware('auth');
-Route::post('/console/contacts/edit/{contact:id}', [ContactsController::class, 'edit'])->where('contact', '[0-9]+')->middleware('auth');
-Route::get('/console/contacts/delete/{contact:id}', [ContactsController::class, 'delete'])->where('contact', '[0-9]+')->middleware('auth');
-Route::get('/console/contacts/image/{contact:id}', [ContactsController::class, 'imageForm'])->where('contact', '[0-9]+')->middleware('auth');
-Route::post('/console/contacts/image/{contact:id}', [ContactsController::class, 'image'])->where('contact', '[0-9]+')->middleware('auth');
+Route::get('/console/education/list', [EducationController::class, 'list'])->middleware('auth');
+Route::get('/console/education/add', [EducationController::class, 'addForm'])->middleware('auth');
+Route::post('/console/education/add', [EducationController::class, 'add'])->middleware('auth');
+Route::get('/console/education/edit/{education:id}', [EducationController::class, 'editForm'])->where('education', '[0-9]+')->middleware('auth');
+Route::post('/console/education/edit/{education:id}', [EducationController::class, 'edit'])->where('education', '[0-9]+')->middleware('auth');
+Route::get('/console/education/delete/{education:id}', [EducationController::class, 'delete'])->where('education', '[0-9]+')->middleware('auth');
+Route::get('/console/education/image/{education:id}', [EducationController::class, 'imageForm'])->where('education', '[0-9]+')->middleware('auth');
+Route::post('/console/education/image/{education:id}', [EducationController::class, 'image'])->where('education', '[0-9]+')->middleware('auth');
+
