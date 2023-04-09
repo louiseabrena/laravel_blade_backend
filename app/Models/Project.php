@@ -20,13 +20,13 @@ class Project extends Model
         'content',
         'slug',
         'image',
-        'type_id',
+        'skill_id',
         'user_id',
     ];
 
-    public function type()
+    public function skill()
     {
-        return $this->belongsTo(Type::class, 'type_id');
+        return $this->belongsTo(Skill::class, 'skill_id');
     }
 
     public function user()

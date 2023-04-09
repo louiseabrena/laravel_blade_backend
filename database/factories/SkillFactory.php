@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class TypeFactory extends Factory
+class SkillFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,7 +14,7 @@ class TypeFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence,
+            'language' => $this->faker->sentence,
         ];
     }
 }

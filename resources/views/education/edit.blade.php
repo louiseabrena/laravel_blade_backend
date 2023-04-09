@@ -54,7 +54,7 @@
 
     </form>
 
-    <a href="/console/Education/list">Back to Education List</a>
+    <a href="/console/education/list">Back to Education List</a>
 
 </section>
 
