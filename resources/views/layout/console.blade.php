@@ -16,28 +16,31 @@
 
         <header class="w3-padding">
 
-            <h1 class="w3-text-red">Portfolio Console</h1>
-
-            @if (Auth::check())
-                You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} |
-                <a href="/console/logout">Log Out</a> | 
-                <a href="/console/dashboard">Dashboard</a> | 
-                <a href="/">Website Home Page</a>
-            @else
-                <a href="/">Return to My Portfolio</a>
-            @endif
+            <h1 class="w3-text-white" id="title">Portfolio Admin</h1>
+            <div id="menu">
+                @if (Auth::check())
+                    You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} |
+                    <a href="/console/logout">Log Out</a> | 
+                    <a href="/console/dashboard">Dashboard</a> | 
+                    <a href="/">Website Home Page</a>
+                @else
+                    <a href="/">Return to My Portfolio</a>
+                @endif
+            </div>
 
         </header>
 
         <hr>
 
-        @if (session()->has('message'))
-            <div class="w3-padding w3-margin-top w3-margin-bottom">
-                <div class="w3-red w3-center w3-padding">{{session()->get('message')}}</div>
-            </div>
-        @endif
+        <div id="content">
+            @if (session()->has('message'))
+                <div class="w3-padding w3-margin-top w3-margin-bottom">
+                    <div class="w3-red w3-center w3-padding">{{session()->get('message')}}</div>
+                </div>
+            @endif
 
-        @yield ('content')
+            @yield ('content')
+        </div>
 
     </body>
 </html>
