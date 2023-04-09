@@ -30,7 +30,7 @@
                         {{$project->slug}}
                     </a>
                 </td>
-                <td>{{$project->type->title}}</td>
+                <td>{{$project->skill->title}}</td>
                 <td>{{$project->created_at->format('M j, Y')}}</td>
                 <td><a href="/console/projects/image/{{$project->id}}">Image</a></td>
                 <td><a href="/console/projects/edit/{{$project->id}}">Edit</a></td>
