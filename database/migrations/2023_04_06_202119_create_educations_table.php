@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // we used "education" becuase 'educations" is not a plural work that laravel recognizes
+        // we used "education" because 'educations" is not a plural work that laravel recognizes
         Schema::create('education', function (Blueprint $table) {
             $table->id();
             $table->string('institution');
