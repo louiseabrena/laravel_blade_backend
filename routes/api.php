@@ -3,9 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Models\Type;
+use App\Models\Skill;
 use App\Models\User;
 use App\Models\Project;
+use App\Models\Contact;
+use App\Models\Education;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,10 +24,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/types', function(){
+Route::get('/skills', function(){
 
-    $types = Type::orderBy('title')->get();
-    return $types;
+    $skills = Skill::orderBy('language')->get();
+    return $skills;
 
 });
 
@@ -36,7 +38,7 @@ Route::get('/projects', function(){
     foreach($projects as $key => $project)
     {
         $projects[$key]['user'] = User::where('id', $project['user_id'])->first();
-        $projects[$key]['type'] = Type::where('id', $project['type_id'])->first();
+        $projects[$key]['skill'] = Skill::where('id', $project['skill_id'])->first();
 
         if($project['image'])
         {
@@ -51,7 +53,7 @@ Route::get('/projects', function(){
 Route::get('/projects/profile/{project?}', function(Project $project){
 
     $project['user'] = User::where('id', $project['user_id'])->first();
-    $project['type'] = Type::where('id', $project['type_id'])->first();
+    $project['skill'] = Skill::where('id', $project['skill_id'])->first();
 
     if($project['image'])
     {
@@ -59,6 +61,26 @@ Route::get('/projects/profile/{project?}', function(Project $project){
     }
 
     return $project;
+
+});
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+Route::get('/contacts', function(){
+
+    $contacts = Contact::orderBy('title')->get();
+
+    return $contacts;
+
+});
+
+Route::get('/education', function(){
+
+    $education = Education::orderBy('institution')->get();
+
+    return $education;
 
 });
 
