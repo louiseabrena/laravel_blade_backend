@@ -51,19 +51,19 @@
         </div>
 
         <div class="w3-margin-bottom">
-            <label for="type_id">Type:</label>
-            <select name="type_id" id="type_id">
+            <label for="skill_id">Skill:</label>
+            <select name="skill_id" id="skill_id">
                 <option></option>
-                @foreach($types as $type)
-                    <option value="{{$type->id}}"
-                        {{$type->id == old('type_id', $project->type_id) ? 'selected' : ''}}>
-                        {{$type->title}}
+                @foreach($skills as $skill)
+                    <option value="{{$skill->id}}"
+                        {{$skill->id == old('skill_id', $project->skill_id) ? 'selected' : ''}}>
+                        {{$skill->language}}
                     </option>
                 @endforeach
             </select>
-            @if ($errors->first('type_id'))
+            @if ($errors->first('skill_id'))
                 <br>
-                <span class="w3-text-red">{{$errors->first('type_id')}}</span>
+                <span class="w3-text-red">{{$errors->first('skill_id')}}</span>
             @endif
         </div>
 
