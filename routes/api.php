@@ -84,3 +84,11 @@ Route::get('/education', function(){
 
 });
 
+Route::get('/users', function(){
+
+    $users = User::orderBy('first')->get();
+
+    return $users;
+
+});
+
