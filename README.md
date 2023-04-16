@@ -48,7 +48,7 @@ To set up this CMS follow these steps:
 2. Clone this repo:
 
     ```
-    $ git clone https://github.com/codeadamca/laravel-blade-cms.git
+    $ git clone https://github.com/louiseabrena/laravel_blade_backend
     ```
 
 3. Using the Terminal, use ```ls``` on a Mac ot ```dir``` on a Windows machine to view the files in the current directory:
